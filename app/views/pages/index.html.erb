@@ -1,15 +1,11 @@
-<button>Create timesheet entry</button>
+<%= link_to "Create Timesheet Entry", new_path %>
 
 <h3>Timesheet entries</h3>
 
 <table>
+  <% @timesheets.each do |timesheet| %>
   <tr>
-    <td>Entry one</td>
+    <td><%= timesheet.date %><%= timesheet.start_time %><%= timesheet.finish_time %></td>
   </tr>
-  <tr>
-    <td>Entry two</td>
-  </tr>
-  <tr>
-    <td>Entry three</td>
-  </tr>
+  <% end %>
 </table>

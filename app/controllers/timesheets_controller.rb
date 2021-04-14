@@ -3,7 +3,7 @@ class TimesheetsController < ApplicationController
     
   end
 
-  def show
-  
+  def create
+    
   end
 end
