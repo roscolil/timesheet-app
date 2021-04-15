@@ -1,11 +1,22 @@
-<%= link_to "Create Timesheet Entry", new_path %>
+<div class="home-wrapper justify-spacing-between">
+  <%= link_to "Create Timesheet Entry", new_timesheet_path, class: "btn btn-outline-dark" %>
 
-<h3>Timesheet entries</h3>
+  <h3 class="mt-4 mb-4">Timesheet entries</h3>
 
-<table>
-  <% @timesheets.each do |timesheet| %>
-  <tr>
-    <td><%= timesheet.date %><%= timesheet.start_time %><%= timesheet.finish_time %></td>
-  </tr>
-  <% end %>
-</table>
+  <table class="col-4 ml-3">
+    <thead>
+      <th>Date</th>
+      <th>Start/Finish times</th>
+      <th>Total pay</th>
+    </thead>
+    <% @timesheets.each do |timesheet| %>
+    <tr>
+      <td><%= timesheet.date.strftime("%d/%m/%Y : ")%></td>
+      <td>
+        <%= timesheet.start_time.strftime("%k:%M - ") %><%= timesheet.finish_time.strftime("%k:%M") %>
+      </td>
+      <td>$110.00</td>
+    </tr>
+    <% end %>
+  </table>
+</div>
