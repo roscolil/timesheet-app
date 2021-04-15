@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
- root 'pages#index'
- get 'new', to:'timesheets#new'
+  root 'pages#index'
+  resources :timesheets, only: [:new, :create]
 end
