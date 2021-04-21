@@ -12,4 +12,6 @@ class Timesheet < ApplicationRecord
             message: "can't be at or before your start time",
             presence: true
 
+  validates_uniqueness_of :start_time, :finish_time
+
 end
