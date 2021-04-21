@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_14_053045) do
+ActiveRecord::Schema.define(version: 2021_04_21_002235) do
+
+  create_table "rates", force: :cascade do |t|
+    t.string "day"
+    t.text "start"
+    t.text "end"
+    t.decimal "rate", precision: 2
+  end
 
   create_table "timesheets", force: :cascade do |t|
     t.datetime "date"
     t.datetime "start_time"
     t.datetime "finish_time"
+    t.float "total_pay"
   end
 
 end
