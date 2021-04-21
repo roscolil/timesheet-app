@@ -13,9 +13,9 @@
     <tr>
       <td><%= timesheet.date.strftime("%d/%m/%Y : ")%></td>
       <td>
-        <%= timesheet.start_time.strftime("%k:%M - ") %><%= timesheet.finish_time.strftime("%k:%M") %>
+        <%= timesheet.start_time.strftime("%k:%M - ") %><%= timesheet.finish_time.strftime("%k:%M") %><%= @day_of_week %>
       </td>
-      <td>$110.00</td>
+      <td><%= number_to_currency(timesheet.total_pay) %></td>
     </tr>
     <% end %>
   </table>
